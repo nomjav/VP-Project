@@ -1,8 +1,10 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
+
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -42,6 +44,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+		Animator anim;
+
+
         // Use this for initialization
         private void Start()
         {
@@ -55,6 +60,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+			anim = GetComponentInChildren<Animator> ();
         }
 
 
@@ -204,16 +211,34 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // Read input
             float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
             float vertical = CrossPlatformInputManager.GetAxis("Vertical");
-
             bool waswalking = m_IsWalking;
+
 
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
-            m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+
+			m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+
+
+
 #endif
+
+
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+
+
+			bool aim = Input.GetButton("Fire2");
+			
+			if(aim == true)
+			{
+				m_IsWalking = true;
+			}
+			anim.SetBool("Sprint", !m_IsWalking);
+			anim.SetBool("Aim", aim);
+
+
             m_Input = new Vector2(horizontal, vertical);
 
             // normalize input if it exceeds 1 in combined length:
