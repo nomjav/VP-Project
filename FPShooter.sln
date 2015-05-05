@@ -7,6 +7,8 @@ Project("{2E73747A-107A-DE6E-AEC9-EE8A44C959F5}") = "FPShooter", "Assembly-CShar
 EndProject
 Project("{2E73747A-107A-DE6E-AEC9-EE8A44C959F5}") = "FPShooter", "Assembly-CSharp-Editor.csproj", "{C661A255-3907-B328-A7DF-226990D53E94}"
 EndProject
+Project("{2E73747A-107A-DE6E-AEC9-EE8A44C959F5}") = "FPShooter", "Assembly-UnityScript.unityproj", "{F153AADE-E0B0-31F5-76EC-521124C930F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,11 +27,15 @@ Global
 		{C661A255-3907-B328-A7DF-226990D53E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C661A255-3907-B328-A7DF-226990D53E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C661A255-3907-B328-A7DF-226990D53E94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F153AADE-E0B0-31F5-76EC-521124C930F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F153AADE-E0B0-31F5-76EC-521124C930F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F153AADE-E0B0-31F5-76EC-521124C930F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F153AADE-E0B0-31F5-76EC-521124C930F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																										GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																						GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
